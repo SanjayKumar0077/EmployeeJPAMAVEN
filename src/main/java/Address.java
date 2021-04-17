@@ -1,10 +1,9 @@
 import javax.persistence.*;
 
-@Entity
-@Table(name = "ADDRESS")
+ @Entity
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO )
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private int addressID;
     @Column(name = "CITY")
     private String city;
@@ -63,7 +62,12 @@ public class Address {
         this.pinCode = pinCode;
     }
 
-    @Override
+    public Address() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
     public String toString() {
         return "Address{" +
                 "addressID=" + addressID +

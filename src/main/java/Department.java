@@ -1,9 +1,9 @@
 import javax.persistence.*;
 
-@Entity
+ @Entity
 public class Department {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int departID;
     @Column(name = "DEPARTMENT")
     private String department;
