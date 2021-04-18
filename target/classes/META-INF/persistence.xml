@@ -7,8 +7,7 @@
 		transaction-type="RESOURCE_LOCAL">
 		<!-- <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
- 
-		<class>EmployeeMaster</class>
+<!-- 		<class>Employee</class> -->
 <!-- 		<class>Address</class> -->
 <!-- 		<class>Department</class> -->
 

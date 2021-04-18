@@ -1,3 +1,4 @@
+ 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -75,7 +76,7 @@ public class application {
 			entityManager.find(Department.class, id);
 
 			// Save the customer object
-			entityManager.persist(department);
+			entityManager.merge(department);
 			entityTransaction.commit();
 		} catch (Exception ex) {
 

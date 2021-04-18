@@ -1,22 +1,15 @@
- 
-import javax.persistence.*;
+package partB;
 
-@Entity
-public class EmployeeMaster {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+public class EmployeeB {
 	private int empID;
 	private String empName;
 	private String password;
 	private int empAge;
 	private double empCTC;
 	private boolean empActive;
-	@ManyToOne (cascade = CascadeType.ALL)
-	@JoinColumn
-	private Department department;
-	@ManyToOne (cascade = CascadeType.ALL)
-	@JoinColumn
-	private Address address;
+	private DepartmentB department;
+	private AddressB address;
+	 
 	public int getEmpID() {
 		return empID;
 	}
@@ -53,25 +46,39 @@ public class EmployeeMaster {
 	public void setEmpActive(boolean empActive) {
 		this.empActive = empActive;
 	}
-	public Department getDepartment() {
+	public DepartmentB getDepartment() {
 		return department;
 	}
-	public void setDepartment(Department department) {
+	public void setDepartment(DepartmentB department) {
 		this.department = department;
 	}
-	public Address getAddress() {
+	public AddressB getAddress() {
 		return address;
 	}
-	public void setAddress(Address address) {
+	public void setAddress(AddressB address) {
 		this.address = address;
+	}
+	public EmployeeB(int empID, String empName, String password, int empAge, double empCTC, boolean empActive,
+			DepartmentB department, AddressB address) {
+		super();
+		this.empID = empID;
+		this.empName = empName;
+		this.password = password;
+		this.empAge = empAge;
+		this.empCTC = empCTC;
+		this.empActive = empActive;
+		this.department = department;
+		this.address = address;
+	}
+	public EmployeeB() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
-		return "EmployeeMaster [empID=" + empID + ", empName=" + empName + ", password=" + password + ", empAge="
-				+ empAge + ", empCTC=" + empCTC + ", empActive=" + empActive + ", department=" + department
-				+ ", address=" + address + "]";
+		return "EmployeeB [empID=" + empID + ", empName=" + empName + ", password=" + password + ", empAge=" + empAge
+				+ ", empCTC=" + empCTC + ", empActive=" + empActive + ", department=" + department + ", address="
+				+ address + "]";
 	}
-	 
-
 	 
 }
