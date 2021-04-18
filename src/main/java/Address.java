@@ -76,4 +76,5 @@ import javax.persistence.*;
                 ", pinCode='" + pinCode + '\'' +
                 '}';
     }
+	
 }

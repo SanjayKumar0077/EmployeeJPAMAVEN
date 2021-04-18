@@ -58,6 +58,11 @@ public class EmployeeMaster {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+	@Override
+	public String toString() {
+		return "EmployeeMaster [empID=" + empID + ", password=" + password + ", empAge=" + empAge + ", empCTC=" + empCTC
+				+ ", empActive=" + empActive + ", department=" + department + ", address=" + address + "]";
+	}
 
 	 
 }
