@@ -9,7 +9,8 @@
 	<version>1.0-SNAPSHOT</version>
 
 	<properties>
-	<property name="hibernate.id.new_generator_mappings">false</property>
+		<property name="hibernate.id.new_generator_mappings">false</property>
+		<property name="show_sql">false</property>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.source>11</maven.compiler.source>
