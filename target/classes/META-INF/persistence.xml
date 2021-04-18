@@ -5,19 +5,39 @@
 	version="2.0">
 	<persistence-unit name="EmployeeProject"
 		transaction-type="RESOURCE_LOCAL">
+		<!-- <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!-- <jta-data-source>jdbc/myDS</jta-data-source> -->
+
 		<class>EmployeeMaster</class>
-		
+		<class>Address</class>
+		<class>Department</class>
+
 
 		<properties>
+			<!-- <property name="javax.persistence.jdbc.driver" -->
+			<!-- value="com.mysql.cj.jdbc.Driver" /> -->
+			<!-- <property name="javax.persistence.jdbc.url" -->
+			<!-- value="jdbc:mysql://localhost/employeemaster?useSSL=false" /> -->
+			<!-- <property name="javax.persistence.jdbc.user" value="root" /> -->
+			<!-- <property name="javax.persistence.jdbc.password" -->
+			<!-- value="root" /> -->
+			<!-- <property name="datanucleus.schema.autoCreateAll" -->
+			<!-- value="true" /> -->
+			<property name='hibernate.show_sql' value='true' />
+			<property name='hibernate.format_sql' value='true' />
+			<property name='hibernate.dialect'
+				value='org.hibernate.dialect.MySQL5InnoDBDialect' />
+			<property name='hibernate.hbm2ddl.auto' value='create' />
+
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.cj.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost/employeemaster" />
-			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password"
+				value="jdbc:mysql://localhost/employeemaster?useSSL=false" />
+			<property name="javax.persistence.jdbc.user"
 				value="root" />
-			
+			<property name="javax.persistence.jdbc.password" value="root" />
+
 
 
 		</properties>

@@ -9,12 +9,12 @@
 	<version>1.0-SNAPSHOT</version>
 
 	<properties>
-		<property name="hibernate.id.new_generator_mappings">false</property>
-		<property name="show_sql">false</property>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+ 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
