@@ -1,5 +1,3 @@
-import static java.lang.System.out;
-
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -13,27 +11,26 @@ public class application {
 
 	public static void main(String[] args) {
 		EmployeeMaster employeeMaster1 = new EmployeeMaster();
-//		Department department = new Department();
-//		department.setDepartID(3);
-//		department.setDepartment("IT");
-//		department.setOperatedRegion("Delhi");
-// 		Address address = new Address();
-//		address.setAddressID(3);
-//		address.setCity("NOIDA");
-//		address.setCountry("INDIA");
-//		address.setPinCode("767899");
-//		address.setState("UP");
-//
-//		employeeMaster1.setDepartment(department);
-//		employeeMaster1.setAddress(address);
-//		employeeMaster1.setEmpActive(true);
-//		employeeMaster1.setEmpAge(30);
-//		employeeMaster1.setEmpCTC(1000100);
-//		employeeMaster1.setEmpID(3);
-//		employeeMaster1.setPassword("RAHUL");
-//
-//		//EmployeeMaster saveEmployee = saveEmployee(employeeMaster1);
-//		//out.println(saveEmployee);
+		Department department = new Department();
+		department.setDepartmentID(0);
+		department.setDepartment("IT");
+ 		Address address = new Address();
+		address.setAddressID(3);
+		address.setCity("INDORE");
+		address.setCountry("INDIA");
+		address.setPinCode("347899");
+		address.setState("MP");
+
+		employeeMaster1.setDepartment(department);
+		employeeMaster1.setAddress(address);
+		employeeMaster1.setEmpActive(true);
+		employeeMaster1.setEmpAge(50);
+		employeeMaster1.setEmpCTC(2000100);
+		employeeMaster1.setEmpID(3);
+		employeeMaster1.setPassword("SUNIL");
+
+		EmployeeMaster saveEmployee = saveEmployee(employeeMaster1);
+	 
 		List<EmployeeMaster> employee = getEmployee();
 		System.out.println(employee);
 		entityManagerFactory.close();
@@ -47,7 +44,7 @@ public class application {
 			entityTransaction.begin();
 
 			EmployeeMaster find = entityManager.find(EmployeeMaster.class, 12);
-			System.out.println(find);
+			//System.out.println(find);
 
 			entityTransaction.commit();
 		} catch (Exception exception) {
@@ -63,6 +60,7 @@ public class application {
 		
 		
 	}
+	//a) Provide a method to create employee record and associate with a department then save in database
 
 	public static EmployeeMaster saveEmployee(EmployeeMaster employeeMaster) {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -85,5 +83,12 @@ public class application {
 		}
 		return employeeMaster;
 
+	}
+	//b) Provide a method to create department and save 
+	
+	public static String createDepartment(int id) {
+		
+		return null;
+		
 	}
 }

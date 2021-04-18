@@ -1,19 +1,19 @@
 import javax.persistence.*;
 
 @Entity
-@Table(name = "USER")
 public class EmployeeMaster {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int empID;
+	private String empName;
 	private String password;
 	private int empAge;
 	private double empCTC;
 	private boolean empActive;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne (cascade = CascadeType.ALL)
 	@JoinColumn
 	private Department department;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne (cascade = CascadeType.ALL)
 	@JoinColumn
 	private Address address;
 	public int getEmpID() {
@@ -21,6 +21,12 @@ public class EmployeeMaster {
 	}
 	public void setEmpID(int empID) {
 		this.empID = empID;
+	}
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
 	}
 	public String getPassword() {
 		return password;
@@ -60,9 +66,11 @@ public class EmployeeMaster {
 	}
 	@Override
 	public String toString() {
-		return "EmployeeMaster [empID=" + empID + ", password=" + password + ", empAge=" + empAge + ", empCTC=" + empCTC
-				+ ", empActive=" + empActive + ", department=" + department + ", address=" + address + "]";
+		return "EmployeeMaster [empID=" + empID + ", empName=" + empName + ", password=" + password + ", empAge="
+				+ empAge + ", empCTC=" + empCTC + ", empActive=" + empActive + ", department=" + department
+				+ ", address=" + address + "]";
 	}
+	 
 
 	 
 }
