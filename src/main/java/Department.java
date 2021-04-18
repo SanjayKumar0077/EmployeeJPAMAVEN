@@ -41,6 +41,18 @@ public class Department {
 		return "Department [DepartmentID=" + DepartmentID + ", Department=" + Department + ", region=" + region + "]";
 	}
 
+	public Department(int departmentID, String department, String region) {
+		super();
+		DepartmentID = departmentID;
+		Department = department;
+		this.region = region;
+	}
+
+	public Department() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	 
 	 
 	 

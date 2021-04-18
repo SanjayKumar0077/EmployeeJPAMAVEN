@@ -1,5 +1,3 @@
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -14,7 +12,7 @@ public class application {
 		Department department = new Department();
 		department.setDepartmentID(0);
 		department.setDepartment("IT");
- 		Address address = new Address();
+		Address address = new Address();
 		address.setAddressID(3);
 		address.setCity("INDORE");
 		address.setCountry("INDIA");
@@ -28,39 +26,17 @@ public class application {
 		employeeMaster1.setEmpCTC(2000100);
 		employeeMaster1.setEmpID(3);
 		employeeMaster1.setPassword("SUNIL");
+         //method no 1
+		saveEmployee(employeeMaster1);
+		// method no 2
 
-		EmployeeMaster saveEmployee = saveEmployee(employeeMaster1);
-	 
-		List<EmployeeMaster> employee = getEmployee();
-		System.out.println(employee);
+		createDepartment(1, new Department(1, "MARKETING", "NEW DELHI"));
 		entityManagerFactory.close();
 
 	}
-	public static List<EmployeeMaster> getEmployee(){
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		EntityTransaction entityTransaction = null;
-		try {
-			entityTransaction = entityManager.getTransaction();
-			entityTransaction.begin();
 
-			EmployeeMaster find = entityManager.find(EmployeeMaster.class, 12);
-			//System.out.println(find);
-
-			entityTransaction.commit();
-		} catch (Exception exception) {
-			if (entityTransaction != null) {
-				entityTransaction.rollback();
-			}
-			exception.printStackTrace();
-
-		} finally {
-			entityManager.close();
-		}
-		return null;
-		
-		
-	}
-	//a) Provide a method to create employee record and associate with a department then save in database
+	// a) Provide a method to create employee record and associate with a department
+	// then save in database
 
 	public static EmployeeMaster saveEmployee(EmployeeMaster employeeMaster) {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -84,11 +60,34 @@ public class application {
 		return employeeMaster;
 
 	}
-	//b) Provide a method to create department and save 
-	
-	public static String createDepartment(int id) {
-		
-		return null;
-		
+	// b) Provide a method to create department and save
+
+	public static String createDepartment(int id, Department department) {
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		EntityTransaction entityTransaction = null;
+
+		try {
+			// Get transaction and start
+			entityTransaction = entityManager.getTransaction();
+			entityTransaction.begin();
+
+			// Find customer and make changes
+			entityManager.find(Department.class, id);
+
+			// Save the customer object
+			entityManager.persist(department);
+			entityTransaction.commit();
+		} catch (Exception ex) {
+
+			if (entityTransaction != null) {
+				entityTransaction.rollback();
+			}
+			ex.printStackTrace();
+		} finally {
+			// Close EntityManager
+			entityManager.close();
+		}
+		return "update sucessfully";
 	}
+
 }
