@@ -3,7 +3,7 @@ import javax.persistence.*;
  @Entity
 	public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.AUTO )
     private int addressID;
     @Column(name = "CITY")
     private String city;

@@ -4,7 +4,7 @@ import javax.persistence.*;
 @Table(name = "USER")
 public class EmployeeMaster {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int empID;
 	private String password;
 	private int empAge;
