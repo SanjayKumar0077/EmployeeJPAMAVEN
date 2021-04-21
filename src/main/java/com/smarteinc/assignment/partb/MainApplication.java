@@ -1,4 +1,4 @@
-package partB;
+package com.smarteinc.assignment.partb;
 
 import java.util.List;
 

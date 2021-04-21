@@ -1,8 +1,9 @@
-package partB;
+package com.smarteinc.assignment.partb;
 
 import java.util.ArrayList;
 import java.util.List;
-/*int empID, String empName, String password, 
+
+/*int empID, String empName, String password,
  * int empAge, double empCTC, boolean empActive,
 			DepartmentB department, AddressB address
  * */

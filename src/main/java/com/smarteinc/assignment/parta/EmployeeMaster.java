@@ -1,15 +1,23 @@
-package partB;
+package com.smarteinc.assignment.parta;
 
-public class EmployeeB {
+import javax.persistence.*;
+
+@Entity
+public class EmployeeMaster {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int empID;
 	private String empName;
 	private String password;
 	private int empAge;
 	private double empCTC;
 	private boolean empActive;
-	private DepartmentB department;
-	private AddressB address;
-	 
+	@ManyToOne (cascade = CascadeType.ALL)
+	@JoinColumn
+	private Department department;
+	@ManyToOne (cascade = CascadeType.ALL)
+	@JoinColumn
+	private Address address;
 	public int getEmpID() {
 		return empID;
 	}
@@ -46,39 +54,25 @@ public class EmployeeB {
 	public void setEmpActive(boolean empActive) {
 		this.empActive = empActive;
 	}
-	public DepartmentB getDepartment() {
+	public Department getDepartment() {
 		return department;
 	}
-	public void setDepartment(DepartmentB department) {
+	public void setDepartment(Department department) {
 		this.department = department;
 	}
-	public AddressB getAddress() {
+	public Address getAddress() {
 		return address;
 	}
-	public void setAddress(AddressB address) {
+	public void setAddress(Address address) {
 		this.address = address;
-	}
-	public EmployeeB(int empID, String empName, String password, int empAge, double empCTC, boolean empActive,
-			DepartmentB department, AddressB address) {
-		super();
-		this.empID = empID;
-		this.empName = empName;
-		this.password = password;
-		this.empAge = empAge;
-		this.empCTC = empCTC;
-		this.empActive = empActive;
-		this.department = department;
-		this.address = address;
-	}
-	public EmployeeB() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
-		return "EmployeeB [empID=" + empID + ", empName=" + empName + ", password=" + password + ", empAge=" + empAge
-				+ ", empCTC=" + empCTC + ", empActive=" + empActive + ", department=" + department + ", address="
-				+ address + "]";
+		return "EmployeeMaster [empID=" + empID + ", empName=" + empName + ", password=" + password + ", empAge="
+				+ empAge + ", empCTC=" + empCTC + ", empActive=" + empActive + ", department=" + department
+				+ ", address=" + address + "]";
 	}
+	 
+
 	 
 }
