@@ -9,25 +9,25 @@ import javax.persistence.Id;
 public class Department {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int DepartmentID;
-	private String Department;
+	private int id;
+	private String name;
 
 	private String region;
 
-	public int getDepartmentID() {
-		return DepartmentID;
+	public int getId() {
+		return id;
 	}
 
-	public void setDepartmentID(int departmentID) {
-		DepartmentID = departmentID;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getDepartment() {
-		return Department;
+	public String getName() {
+		return name;
 	}
 
-	public void setDepartment(String department) {
-		Department = department;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getRegion() {
@@ -38,15 +38,10 @@ public class Department {
 		this.region = region;
 	}
 
-	@Override
-	public String toString() {
-		return "Department [DepartmentID=" + DepartmentID + ", Department=" + Department + ", region=" + region + "]";
-	}
-
-	public Department(int departmentID, String department, String region) {
+	public Department(int id, String name, String region) {
 		super();
-		DepartmentID = departmentID;
-		Department = department;
+		this.id = id;
+		this.name = name;
 		this.region = region;
 	}
 
@@ -54,6 +49,12 @@ public class Department {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public String toString() {
+		return "Department [id=" + id + ", name=" + name + ", region=" + region + "]";
+	}
+	
 
 	 
 	 
